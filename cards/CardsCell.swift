@@ -10,15 +10,18 @@ import UIKit
 
 class CardsCell: UITableViewCell {
 
+    @IBOutlet weak var viewCard: UIView!
+    @IBOutlet weak var imageCard: UIImageView!
+    @IBOutlet weak var labelCard: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        imageCard.layer.masksToBounds = true
+        viewCard.layer.masksToBounds = false
+        viewCard.layer.cornerRadius = 8.0
+        imageCard.layer.cornerRadius = 8.0
+        viewCard.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        viewCard.layer.shadowOffset = CGSize(width: 0, height: 0)
+        viewCard.layer.shadowOpacity = 0.8
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }
